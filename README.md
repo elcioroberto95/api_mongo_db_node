@@ -24,10 +24,10 @@ Com o postman aberto insira a url https://localhost:3000/person e o método que 
  GET - /person<br/>
 
  POST - /person <br/>
-#   body: { name:String, salary:Number, approved:Boolean } <br/>
+ body: { name:String, salary:Number, approved:Boolean } <br/>
 
  PATCH - /person/:id<br/>
-#   body: { name:String, salary:Number, approved:Boolean } <br/>
+ body: { name:String, salary:Number, approved:Boolean } <br/>
 
  DELETE - /person/:id<br/>
 
