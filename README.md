@@ -6,7 +6,7 @@ Site NODE.JS:  https://nodejs.org/en/
 Site MONGO.DB: https://www.mongodb.com/pt-br
 
 # COMO RODAR O PROJETO
-Crie uma conta no mongoDB,crie um cluster, copie o link de conexão e preencha com suas informações de usuario e senha
+Crie uma conta no mongoDB,crie um cluster, copie o link de conexão e preencha com suas informações de usuario e senha<br/>
 crie um arquivo .env com as seguintes variaveis:
 DB_USER
 DB_PASSWORD
