@@ -28,6 +28,23 @@ router.get('/person', async (request, response) => {
         response.status(400).json({ 'error': error });
     }
 });
+router.get('/person/:id', async (request, response) => {
+    const { id } = request.params;
+    try {
+        const person = await Person.findOne({
+            '_id': id
+        });
+        if (!person) {
+
+        }
+        return response.status(200).json({ 'data': person });
+    }
+    catch (error) {
+        return response.status(400).json({ 'error': error });
+    }
+});
+
+
 
 
 module.exports = router;
