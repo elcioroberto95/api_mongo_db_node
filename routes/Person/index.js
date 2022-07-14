@@ -54,7 +54,23 @@ router.delete('/person/:id', async (request, response) => {
         return response.status(400).json({ 'error': error });
     }
 });
-
+router.patch('/person/:id', async (request, response) => {
+    const { id } = request.params;
+    const { name, salary, approved } = request.body;
+    const person = { name, salary, approved };
+    try {
+        const updatedPerson = await Person.updateOne({
+            '_id': id
+        }, person);
+        if (updatedPerson.matchedCount == 0) {
+            throw new Error('This id not found or is invalid');
+        }
+        return response.status(200).json({ 'data': 'Updated person' });
+    }
+    catch (error) {
+        return response.status(400).json({ 'error': error });
+    }
+})
 
 
 module.exports = router;
