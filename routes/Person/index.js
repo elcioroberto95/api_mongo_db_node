@@ -44,6 +44,16 @@ router.get('/person/:id', async (request, response) => {
     }
 });
 
+router.delete('/person/:id', async (request, response) => {
+    const { id } = request.params;
+    try {
+        await Person.deleteOne({ '_id': id });
+        return response.status(200).json({ 'data': 'The register was successfully deleted' });
+    }
+    catch (error) {
+        return response.status(400).json({ 'error': error });
+    }
+});
 
 
 
